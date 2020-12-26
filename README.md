@@ -12,3 +12,11 @@ O material dessa pasta é focado no uso de programação orientada a objetos, se
 
 # Avançado
 (Material em desenvolvimento).
+
+# Atalhos Úteis
+Atalhos úteis no VS Code:
+CTRL+;                       == Converte/reverte seleção em comentário.
+SHIFT+ALT+SETA(CIMA/BAIXO)   == Duplica linha do cursor.
+PRESS ALT+SETA(CIMA/BAIXO)   == Move a linha do cursor p/ cima ou baixo.
+PRESS CTRL+SETA(CIMA/BAIXO)  == Move a tela (rola as linhas de texto).
+CTRL+ALT+SETA(CIMA/BAIXO)    == Seleção de posição em multiplas linhas (coluna).

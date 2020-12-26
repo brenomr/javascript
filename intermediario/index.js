@@ -1,47 +1,45 @@
-class Cliente{
-    nome;
-    cpf;
-}
+import {Cliente} from "./Cliente.js"
+import {ContaCorrente} from "./ContaCorrente.js"
 
-class ContaCorrente{
-    agencia;
-    saldo;
+// ========  CLIENTES ========  
 
-    sacar(valor){
-        if(valor>this.saldo){
-            console.log("\nERRO: saque é superior ao saldo!")
-            console.log(`Tentou sacar R$ ${valor}, mas saldo é de R$ ${this.saldo}.\n`)
-        }
-        
-        else{
-            this.saldo -= valor; // Mesmo que: ccFernando.saldo - valor;
-            console.log(`Saque de R$ ${valor} realizado com sucesso! Saldo atual é de R$ ${this.saldo}.\n`);
-        }
-    }
+const cliFernando = new Cliente();
+cliFernando.nome = "Fernando";
+cliFernando.cpf = 12312312332;
 
-    deposito(valor){
-        this.saldo += valor;
-        console.log(`\nFoi depositado R$ ${valor} e o saldo atual é R$ ${this.saldo}.\n`);
-    }
-}
+const cliBarbara = new Cliente();
+cliBarbara.nome = "Barbara";
+cliBarbara.cpf = 32112332124;
 
-const cliente1 = new Cliente();
-cliente1.nome = "Fernando";
-cliente1.cpf = 12312312332;
-
-const cliente2 = new Cliente();
-cliente2.nome = "Barbara";
-cliente2.cpf = 32112332124;
-
+// =========  CONTAS =========  
 
 const ccFernando = new ContaCorrente();
 ccFernando.agencia = 1001;
-ccFernando.saldo = 50;
-
-ccFernando.deposito(300);
-ccFernando.sacar(100);
-
+ccFernando.cliente = cliFernando;
+console.log(`Saldo após deposito: R$ ${ccFernando.depositar(1000)}.`);    // Efetuando depósito
 
 const ccBarbara = new ContaCorrente();
-ccBarbara.agencia = 2002;
-ccBarbara.saldo = 0;
+ccBarbara.agencia = 6565;
+ccBarbara.cliente = cliBarbara;
+console.log(`Saldo após depósito: R$ ${ccBarbara.depositar(100)}`);
+
+console.log(ccFernando.transferir(100,ccBarbara))
+console.log(ccBarbara.consultarSaldo());
+
+
+/* ============ OBSERVAÇÕES MODULOS ============
+Resumo: Ao trabalhar com modulos é necessário que
+os arquivos sejam salvos como *.mjs ou então um
+package.json seja configurado.
+
+Configurando: npm init para iniciar a config do
+package.json, em seguida preencher os campos, e
+após adicionar o campo "type": "module"***
+
+*** Esse campo type é solicitado na tela de erro
+ao tentar executar os arquivos *.js sem que sejam
+vistos como módulo. */
+
+// UTILIDADES: Removido do código para simplificação
+// console.log(`Sacado: R$ ${ccFernando.sacar(50)}.`);                     // Efetuando saque
+// console.log(`Seu saldo é de: R$ ${ccFernando.consultarSaldo()}`);       // Efetuando consulta de saldo
