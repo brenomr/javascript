@@ -1,0 +1,20 @@
+{
+  "name": "projbanco",
+  "version": "1.0.0",
+  "description": "Pequeno projeto de banco com gerenciamento de clientes e contas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenomr/javascript.git"
+  },
+  "author": "Breno Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brenomr/javascript/issues"
+  },
+  "homepage": "https://github.com/brenomr/javascript#readme",
+  "type":"module"
+}
