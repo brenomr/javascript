@@ -1,21 +1,54 @@
-export class ContaCorrente{
-    agencia;
-    cliente;
+import { Cliente } from "./Cliente.js";
+// let contaTotal = 0; ***** Para contagem total e posição atual de cada instancia
 
-    _saldo = 0; // Por boa prática atributos com '_' são considerados PRIVADOS
+export class ContaCorrente{
+    // contaAtual = contaTotal += 1; ***** Para contagem total e posição atual de cada instancia
+    static numeroDeContas = 0;
+    agencia;
+
+    _cliente;
+    _saldo = 0; // Por convenção atributos iniciados com '_' são considerados PRIVADOS
+
+    // 'GETTERS'/'SETTERS' permitem trabalhar com atributos sem que o privado seja diretamente manipulado, provendo ENCAPSULAMENTO
+    set cliente(valor){                 // Bloco 'SETando' (guardando) a informação enviada através de cliente p/ _cliente, desde que
+        if(valor instanceof Cliente){   // atenda a regra, que verifica (instanceof) se o valor em cliente é uma instancia de Cliente
+            this._cliente = valor;
+        }
+    }
+
+    get cliente(){  // Sem GET ñ é possível 'pegar' os valores de cliente, ele será considerado undefined e _cliente ñ deve ser usado fora da classe
+        return this._cliente;
+    }
+
+    get saldo(){
+        return this._saldo;
+    }
+
+    /* get numeroTotal(){ ***** Para contagem total e posição atual de cada instancia
+        return contaTotal;
+    }
+
+    get numeroAtual(){ ***** Para contagem total e posição atual de cada instancia
+        return this.contaAtual;
+    } */
+
+    constructor(agencia,cliente){
+        this.agencia = agencia;
+        this.cliente = cliente; // É bom manter o uso de cliente - definido no set - pois ele já faz uso da regra deste set
+        ContaCorrente.numeroDeContas += 1;
+    }
 
     sacar(valor){
         if(valor>this._saldo){
-            return 0;
+            return "Saldo insuficiente para este saque.";
         }
         else{
             this._saldo -= valor;
-            return valor;
+            return `Você sacou R$ ${valor}.`;
         }
     }
 
     depositar(valor){
-
         if(valor <= 0){
             console.log("O valor do depósito precisa ser maior que zero!");
             return 0;
@@ -24,10 +57,6 @@ export class ContaCorrente{
             this._saldo += valor;
             return this._saldo;
         }
-     }
-
-     consultarSaldo(){
-         return this._saldo;
      }
 
      transferir(valor,conta){

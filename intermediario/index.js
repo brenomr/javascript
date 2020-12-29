@@ -3,28 +3,30 @@ import {ContaCorrente} from "./ContaCorrente.js"
 
 // ========  CLIENTES ========  
 
-const cliFernando = new Cliente();
-cliFernando.nome = "Fernando";
-cliFernando.cpf = 12312312332;
+const cliFernando = new Cliente("Fernando",12312312323);
+const cliBarbara = new Cliente("Barbara",32112332124);
+//console.log(cliFernando);
 
-const cliBarbara = new Cliente();
-cliBarbara.nome = "Barbara";
-cliBarbara.cpf = 32112332124;
+// Como ficaria sem o construtor declarado na classe
+// const cliBarbara = new Cliente();
+// cliBarbara.nome = "Barbara";
+// cliBarbara.cpf = 32112332124; <---- Ainda exigiria um set para o cpf
+
+
 
 // =========  CONTAS =========  
 
-const ccFernando = new ContaCorrente();
-ccFernando.agencia = 1001;
-ccFernando.cliente = cliFernando;
-console.log(`Saldo após deposito: R$ ${ccFernando.depositar(1000)}.`);    // Efetuando depósito
+const ccBarbara = new ContaCorrente(2002,cliBarbara);
+const ccFernando = new ContaCorrente(1001,cliFernando);
 
-const ccBarbara = new ContaCorrente();
-ccBarbara.agencia = 6565;
-ccBarbara.cliente = cliBarbara;
-console.log(`Saldo após depósito: R$ ${ccBarbara.depositar(100)}`);
+// =======  OPERAÇÕES ========  
 
-console.log(ccFernando.transferir(100,ccBarbara))
-console.log(ccBarbara.consultarSaldo());
+console.log(ccFernando.sacar(200));
+ccFernando.depositar(1000);
+console.log(ccFernando.sacar(200));
+ccFernando.transferir(100,ccBarbara);
+console.log(`Sr(a). ${ccFernando.cliente.nome}, seu saldo é de R$ ${ccFernando.saldo}.`);
+console.log(`=====================================\nNúmero total de contas cadastradas: ${ContaCorrente.numeroDeContas}\n=====================================`);
 
 
 /* ============ OBSERVAÇÕES MODULOS ============
