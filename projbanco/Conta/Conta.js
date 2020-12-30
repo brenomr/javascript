@@ -1,12 +1,19 @@
-import { Cliente } from "./Cliente.js";
+import { Cliente } from "./../Cliente.js";
 
+// Classe abstrata, só pode ser herdada
 export class Conta{
     constructor(agencia, cliente, saldoInicial){
+
+        // Erro lançado na tentativa de instanciar uma Conta diretamente
+        if(this.constructor == Conta){
+            throw new Error("Atenção! Não instancie diretamente uma classe abstrata (Conta).");
+        }
         this._agencia = agencia;
         this._cliente = cliente;
         this._saldo = saldoInicial;
     }
 
+    // VERIFICAR o comportamento, pois o modo construtor não verifica se o parametro cliente é um objeto de Cliente
     set cliente(valor){
         if (valor instanceof Cliente){
             this._cliente = valor;
@@ -22,8 +29,9 @@ export class Conta{
     }
 
     sacar(valor){
-        let taxa = 1;
-        return this._sacar(valor,taxa);
+
+        // Erro lançado na tentativa de utilizar o método abstrato. O comportamento dele deve ser descrito na classe filha
+        throw new Error("Atenção! O método sacar() é abstrato, defina o comportamento para evitar este erro.");
     }
 
     _sacar(valor,taxa){
@@ -60,3 +68,12 @@ export class Conta{
         }
     }
 }
+
+// ANOTAÇÕES
+// console.log(this.constructor); // Código útil para mostrar quais classes filhas chamam este construtor, jogar no constructor da Conta
+
+// Método antes de ser substituído pelo modo abstrato
+// sacar(valor){
+//     let taxa = 1;
+//     return this._sacar(valor,taxa);
+// }
