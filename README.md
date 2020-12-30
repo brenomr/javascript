@@ -20,3 +20,4 @@ SHIFT+ALT+SETA(CIMA/BAIXO)   == Duplica linha do cursor.
 PRESS ALT+SETA(CIMA/BAIXO)   == Move a linha do cursor p/ cima ou baixo.
 PRESS CTRL+SETA(CIMA/BAIXO)  == Move a tela (rola as linhas de texto).
 CTRL+ALT+SETA(CIMA/BAIXO)    == Seleção de posição em multiplas linhas (coluna).
+CTRL+SHIFT+'		     == Novo terminal.
