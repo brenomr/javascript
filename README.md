@@ -10,7 +10,7 @@ Nessa pasta há material voltado para o conteúdo básico de java, incluindo def
 # Intermediário
 O material dessa pasta é focado no uso de programação orientada a objetos, seguindo um exemplo de aplicação bancária, onde é estruturado o objeto cliente e o objeto conta corrente. (Item finalizado!).
 
-# Avançado
+# Projbanco
 Refinamento da aplicação bancária iniciada no modo intermediário, aqui são aplicados conceitos de herança, classes abstratas, sistema interno, interface e duck type. (Item em andamento! Será atualizado conforme avanço).
 
 # Atalhos Úteis
