@@ -11,7 +11,10 @@ Nessa pasta há material voltado para o conteúdo básico de java, incluindo def
 O material dessa pasta é focado no uso de programação orientada a objetos, seguindo um exemplo de aplicação bancária, onde é estruturado o objeto cliente e o objeto conta corrente. (Item finalizado!).
 
 # Projbanco
-Refinamento da aplicação bancária iniciada no modo intermediário, aqui são aplicados conceitos de herança, classes abstratas, sistema interno, interface e duck type. (Item em andamento! Será atualizado conforme avanço).
+Refinamento da aplicação bancária iniciada no modo intermediário, aqui são aplicados conceitos de herança, classes abstratas, sistema interno, interface e duck type. (Item em andamento! Futuras melhorias serão implementadas com o tempo).
+
+# Resultado
+Todas as etapas no estudo da linguagem JavaScript foram registradas nos itens iniciante, intermediário e projbanco, durante o desenvolvimento diversos comentários foram lançados e muitas observações de melhoria foram levantadas, então essas melhorias serão implementadas com o tempo no intuito de manter o estudo sobre a linguagem.
 
 # Atalhos Úteis
 Atalhos úteis no VS Code:
@@ -20,3 +23,5 @@ SHIFT+ALT+SETA(CIMA/BAIXO)   == Duplica linha do cursor.
 PRESS ALT+SETA(CIMA/BAIXO)   == Move a linha do cursor p/ cima ou baixo.
 PRESS CTRL+SETA(CIMA/BAIXO)  == Move a tela (rola as linhas de texto).
 CTRL+ALT+SETA(CIMA/BAIXO)    == Seleção de posição em multiplas linhas (coluna).
+2CLICK+CTRL+D		     == 2 clicks p/ seleção de texto, CTRL+D p/ seleção e edição simultanea.
+F12			     == Navega até origem do método/função selecionado.
