@@ -8,10 +8,10 @@ O envio deste material para o GitHub contempla os testes de uso do versionador d
 Nessa pasta há material voltado para o conteúdo básico de java, incluindo definição e atribuição de variáveis, operadores aritméticos, listas, condicionais, entre outros. (Item finalizado! Futuras melhorias serão implementadas com o tempo).
 
 # Intermediário
-O material dessa pasta é focado no uso de programação orientada a objetos, seguindo um exemplo de aplicação bancária, onde é estruturado o objeto cliente e o objeto conta corrente. (Item em andamento! Será atualizado conforme avanço).
+O material dessa pasta é focado no uso de programação orientada a objetos, seguindo um exemplo de aplicação bancária, onde é estruturado o objeto cliente e o objeto conta corrente. (Item finalizado!).
 
 # Avançado
-(Material em desenvolvimento).
+Refinamento da aplicação bancária iniciada no modo intermediário, aqui são aplicados conceitos de herança, classes abstratas, sistema interno, interface e duck type. (Item em andamento! Será atualizado conforme avanço).
 
 # Atalhos Úteis
 Atalhos úteis no VS Code:
